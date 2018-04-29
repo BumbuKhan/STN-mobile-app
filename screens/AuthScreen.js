@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableHighlight} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Button, Input, CheckBox} from 'react-native-elements';
 import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -54,11 +54,11 @@ class AuthScreen extends Component {
                         secureTextEntry={true}
                     />
 
-                    <TouchableHighlight onPress={this.goToPasswordRestoreScreen}>
+                    <TouchableOpacity onPress={this.goToPasswordRestoreScreen}>
                         <Text style={styles.forgotPassword}>
                             Forgot password?
                         </Text>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
 
                     <View
                         style={styles.submitBtnContainer}>
@@ -69,7 +69,7 @@ class AuthScreen extends Component {
                 </View>
 
                 <View style={styles.footerContainer}>
-                    <TouchableHighlight onPress={this.goToSignUpScreen}>
+                    <TouchableOpacity onPress={this.goToSignUpScreen}>
                         <Text>
                             Don't have an account?
                             <Text style={{
@@ -77,7 +77,7 @@ class AuthScreen extends Component {
                             }}> Sign Up
                             </Text>
                         </Text>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
             </View>
         );

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableHighlight} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Button, Input} from 'react-native-elements';
 import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -15,7 +15,7 @@ class PasswordRestoreScreen extends Component {
         return (
             <View style={styles.wrapper}>
                 <View style={styles.backButtonWrapper}>
-                    <TouchableHighlight onPress={this.goToLoginScreen}>
+                    <TouchableOpacity onPress={this.goToLoginScreen}>
                         <Text style={{
                             fontSize: 16
                         }}>
@@ -26,7 +26,7 @@ class PasswordRestoreScreen extends Component {
                             /> Back to login
                         </Text>
 
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.titleContainer}>
