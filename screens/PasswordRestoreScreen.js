@@ -6,24 +6,39 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {login} from '../actions';
 
-class AuthScreen extends Component {
-    goToPasswordRestoreScreen = () => {
-        this.props.navigation.navigate('passwordRestore');
+class PasswordRestoreScreen extends Component {
+    goToLoginScreen = () => {
+        this.props.navigation.navigate('auth');
     };
 
     render() {
         return (
             <View style={styles.wrapper}>
+                <View style={styles.backButtonWrapper}>
+                    <TouchableHighlight onPress={this.goToLoginScreen}>
+                        <Text style={{
+                            fontSize: 16
+                        }}>
+                            <Icon
+                                name='arrow-left'
+                                size={20}
+                                color='black'
+                            /> Back to login
+                        </Text>
+
+                    </TouchableHighlight>
+                </View>
+
                 <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Log in</Text>
+                    <Text style={styles.title}>Restore password</Text>
                 </View>
 
                 <View style={styles.inputsContainer}>
                     <Input
-                        placeholder="Username"
+                        placeholder="Email"
                         leftIcon={
                             <Icon
-                                name='user'
+                                name='envelope-o'
                                 size={20}
                                 color='#777'
                             />
@@ -34,27 +49,11 @@ class AuthScreen extends Component {
                         keyboardType="email-address"
                     />
 
-                    <Input
-                        placeholder="Password"
-                        leftIcon={
-                            <Icon
-                                name='lock'
-                                size={20}
-                                color='#777'
-                            />
-                        }
-                        containerStyle={{
-                            marginTop: 20,
-                            width: '100%'
-                        }}
-                        secureTextEntry={true}
-                    />
-
-                    <TouchableHighlight onPress={this.goToPasswordRestoreScreen}>
-                        <Text style={styles.forgotPassword}>
-                            Forgot password?
-                        </Text>
-                    </TouchableHighlight>
+                    <Text style={{
+                        marginTop: 5
+                    }}>
+                        Enter email address you've signed up with to get the further instructions
+                    </Text>
 
                     <Button
                         title="Submit"
@@ -72,23 +71,20 @@ const styles = {
         padding: 20
     },
     titleContainer: {
-        marginTop: 60,
+        marginTop: 40,
     },
     title: {
         fontSize: 36,
         fontWeight: '800',
     },
     inputsContainer: {
-        marginTop: 20
+      marginTop: 20
     },
     submitBtn: {
-        marginTop: 25
+        marginTop: 30
     },
-    forgotPassword: {
-        textAlign: 'right',
-        marginTop: 10,
-        color: '#2e9ce0',
-        fontWeight: '700'
+    backButtonWrapper: {
+        marginTop: 40
     }
 };
 
@@ -96,4 +92,4 @@ function mapStateToProps({auth}) {
     return {auth: auth.token}
 }
 
-export default connect(mapStateToProps, {login})(AuthScreen);
+export default connect(mapStateToProps, {login})(PasswordRestoreScreen);
