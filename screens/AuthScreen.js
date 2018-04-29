@@ -29,7 +29,7 @@ class AuthScreen extends Component {
                             <Icon
                                 name='user'
                                 size={20}
-                                color='#777'
+                                color='#ccc'
                             />
                         }
                         containerStyle={{
@@ -44,7 +44,7 @@ class AuthScreen extends Component {
                             <Icon
                                 name='lock'
                                 size={20}
-                                color='#777'
+                                color='#ccc'
                             />
                         }
                         containerStyle={{
@@ -101,11 +101,11 @@ const styles = {
         marginTop: 20
     },
     submitBtnContainer: {
-        marginTop: 25
+        marginTop: 20
     },
     forgotPassword: {
         textAlign: 'right',
-        marginTop: 10,
+        marginTop: 20,
         color: '#2e9ce0',
         fontWeight: '700'
     },

@@ -40,7 +40,7 @@ class PasswordRestoreScreen extends Component {
                             <Icon
                                 name='envelope-o'
                                 size={20}
-                                color='#777'
+                                color='#ccc'
                             />
                         }
                         containerStyle={{
