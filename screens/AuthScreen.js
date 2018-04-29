@@ -56,10 +56,12 @@ class AuthScreen extends Component {
                         </Text>
                     </TouchableHighlight>
 
-                    <Button
-                        title="Submit"
-                        style={styles.submitBtn}
-                    />
+                    <View
+                        style={styles.submitBtnContainer}>
+                        <Button
+                            title="Submit"
+                        />
+                    </View>
                 </View>
             </View>
         );
@@ -81,7 +83,7 @@ const styles = {
     inputsContainer: {
         marginTop: 20
     },
-    submitBtn: {
+    submitBtnContainer: {
         marginTop: 25
     },
     forgotPassword: {

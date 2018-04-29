@@ -55,10 +55,11 @@ class PasswordRestoreScreen extends Component {
                         Enter email address you've signed up with to get the further instructions
                     </Text>
 
-                    <Button
-                        title="Submit"
-                        style={styles.submitBtn}
-                    />
+                    <View style={styles.submitBtnContainer}>
+                        <Button
+                            title="Submit"
+                        />
+                    </View>
                 </View>
             </View>
         );
@@ -80,8 +81,8 @@ const styles = {
     inputsContainer: {
       marginTop: 20
     },
-    submitBtn: {
-        marginTop: 30
+    submitBtnContainer: {
+        marginTop: 25
     },
     backButtonWrapper: {
         marginTop: 40
