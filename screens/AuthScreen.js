@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableHighlight} from 'react-native';
-import {Button, Input} from 'react-native-elements';
+import {Button, Input, CheckBox} from 'react-native-elements';
 import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -11,11 +11,15 @@ class AuthScreen extends Component {
         this.props.navigation.navigate('passwordRestore');
     };
 
+    goToSignUpScreen = () => {
+        alert('Do we have a sign up screen?');
+    };
+
     render() {
         return (
             <View style={styles.wrapper}>
                 <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Log in</Text>
+                    <Text style={styles.title}>Log In</Text>
                 </View>
 
                 <View style={styles.inputsContainer}>
@@ -63,6 +67,18 @@ class AuthScreen extends Component {
                         />
                     </View>
                 </View>
+
+                <View style={styles.footerContainer}>
+                    <TouchableHighlight onPress={this.goToSignUpScreen}>
+                        <Text>
+                            Don't have an account?
+                            <Text style={{
+                                color: '#2e9ce0'
+                            }}> Sign Up
+                            </Text>
+                        </Text>
+                    </TouchableHighlight>
+                </View>
             </View>
         );
     }
@@ -71,7 +87,8 @@ class AuthScreen extends Component {
 const styles = {
     wrapper: {
         flex: 1,
-        padding: 20
+        padding: 20,
+        paddingBottom: 0
     },
     titleContainer: {
         marginTop: 60,
@@ -91,6 +108,12 @@ const styles = {
         marginTop: 10,
         color: '#2e9ce0',
         fontWeight: '700'
+    },
+    footerContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        paddingBottom: 15
     }
 };
 
