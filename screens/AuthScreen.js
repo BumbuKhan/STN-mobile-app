@@ -32,7 +32,7 @@ class AuthScreen extends Component {
             });
 
             this.props.navigation.navigate('main');
-        }, 1500);
+        }, 1000);
     };
 
     renderSigninButton = () => {

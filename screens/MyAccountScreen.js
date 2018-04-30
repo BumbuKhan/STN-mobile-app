@@ -1,12 +1,22 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {Header, Icon} from 'react-native-elements';
 import {connect} from 'react-redux';
 
+import HamburgerMenu from '../components/HamburgerMenu';
+
 class MyAccountScreen extends Component {
+    static navigationOptions = {
+        title: 'My Account',
+    };
+
     render() {
         return (
-            <View style={styles.wrapper}>
-                <Text>My account screen</Text>
+            <View>
+                <Header
+                    leftComponent={<HamburgerMenu {...this.props}/>}
+                    centerComponent={{ text: MyAccountScreen.navigationOptions.title, style: { color: '#fff' } }}
+                />
             </View>
         );
     }

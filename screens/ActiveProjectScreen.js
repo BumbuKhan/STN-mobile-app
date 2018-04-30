@@ -1,23 +1,28 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {Header, Icon} from 'react-native-elements';
 import {connect} from 'react-redux';
 
+import HamburgerMenu from '../components/HamburgerMenu';
+
 class ActiveProjectScreen extends Component {
+    static navigationOptions = {
+        title: 'Active Project',
+    };
+
     render() {
         return (
-            <View style={styles.wrapper}>
-                <Text>Active project screen</Text>
+            <View>
+                <Header
+                    leftComponent={<HamburgerMenu {...this.props}/>}
+                    centerComponent={{ text: ActiveProjectScreen.navigationOptions.title, style: { color: '#fff' } }}
+                />
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
 });
 
 mapStateToProps = (state) => state;
