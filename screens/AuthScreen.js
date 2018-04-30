@@ -20,7 +20,7 @@ class AuthScreen extends Component {
     };
 
     handleSubmit = () => {
-        // Imitating signing in process, will be replaced with API call
+        // Imitating signing in process, will be replaced with a real API call
 
         this.setState({
             isSigningIn: true
@@ -30,11 +30,14 @@ class AuthScreen extends Component {
             this.setState({
                 isSigningIn: false
             });
+
+            this.props.navigation.navigate('main');
         }, 3000);
     };
 
     renderSigninButton = () => {
         if (this.state.isSigningIn) {
+            // rendering loading button
             return (
                 <Button
                     onPress={() => {}}
