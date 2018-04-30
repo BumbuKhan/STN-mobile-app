@@ -7,12 +7,51 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {login} from '../actions';
 
 class AuthScreen extends Component {
+    state = {
+        isSigningIn: false, // will be equal to true once user presses 'Sign in' button
+    };
+
     goToPasswordRestoreScreen = () => {
         this.props.navigation.navigate('passwordRestore');
     };
 
     goToSignUpScreen = () => {
         alert('Do we have a sign up screen?');
+    };
+
+    handleSubmit = () => {
+        // Imitating signing in process, will be replaced with API call
+
+        this.setState({
+            isSigningIn: true
+        });
+
+        setTimeout(() => {
+            this.setState({
+                isSigningIn: false
+            });
+        }, 3000);
+    };
+
+    renderSigninButton = () => {
+        if (this.state.isSigningIn) {
+            return (
+                <Button
+                    onPress={() => {}}
+                    disabled
+                    loading
+                    loadingStyle={{
+                        paddingTop: 9,
+                        paddingBottom: 9
+                    }}
+                />
+            );
+        }
+
+        return (<Button
+            onPress={this.handleSubmit}
+            title="Submit"
+        />);
     };
 
     render() {
@@ -62,9 +101,7 @@ class AuthScreen extends Component {
 
                     <View
                         style={styles.submitBtnContainer}>
-                        <Button
-                            title="Submit"
-                        />
+                        {this.renderSigninButton()}
                     </View>
                 </View>
 

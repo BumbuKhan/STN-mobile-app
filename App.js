@@ -5,13 +5,14 @@ import {Provider} from 'react-redux';
 import store from './store';
 import AuthScreen from './screens/AuthScreen';
 import PasswordRestoreScreen from './screens/PasswordRestoreScreen';
+import MainScreen from './screens/MainScreen';
 
 export default class App extends Component {
     render() {
         const MainNavigator = TabNavigator({
             auth: {screen: AuthScreen},
             passwordRestore: {screen: PasswordRestoreScreen},
-            // main: { screen: MainScreen }
+            main: {screen: MainScreen}
         }, {
             navigationOptions: {
                 tabBarVisible: false
@@ -21,7 +22,7 @@ export default class App extends Component {
 
         return (
             <Provider store={store}>
-                <MainNavigator />
+                <MainNavigator/>
             </Provider>
         );
     }
